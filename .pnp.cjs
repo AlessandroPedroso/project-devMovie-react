@@ -38,6 +38,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react-refresh", "virtual:157883dca3dc54146b7b52f62e6263c5cfd61b644fe169de364a875d75f0e0ab29e811befc40d15ded7a93435233d6b05a9256a7d5d1aff729d8d7bd803394a1#npm:0.3.5"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:157883dca3dc54146b7b52f62e6263c5cfd61b644fe169de364a875d75f0e0ab29e811befc40d15ded7a93435233d6b05a9256a7d5d1aff729d8d7bd803394a1#npm:18.2.0"],\
+            ["react-icons", "virtual:157883dca3dc54146b7b52f62e6263c5cfd61b644fe169de364a875d75f0e0ab29e811befc40d15ded7a93435233d6b05a9256a7d5d1aff729d8d7bd803394a1#npm:4.11.0"],\
             ["react-router-dom", "virtual:157883dca3dc54146b7b52f62e6263c5cfd61b644fe169de364a875d75f0e0ab29e811befc40d15ded7a93435233d6b05a9256a7d5d1aff729d8d7bd803394a1#npm:6.14.2"],\
             ["styled-components", "virtual:157883dca3dc54146b7b52f62e6263c5cfd61b644fe169de364a875d75f0e0ab29e811befc40d15ded7a93435233d6b05a9256a7d5d1aff729d8d7bd803394a1#npm:6.0.8"],\
             ["swiper", "npm:10.3.1"],\
@@ -5770,6 +5771,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react-refresh", "virtual:157883dca3dc54146b7b52f62e6263c5cfd61b644fe169de364a875d75f0e0ab29e811befc40d15ded7a93435233d6b05a9256a7d5d1aff729d8d7bd803394a1#npm:0.3.5"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:157883dca3dc54146b7b52f62e6263c5cfd61b644fe169de364a875d75f0e0ab29e811befc40d15ded7a93435233d6b05a9256a7d5d1aff729d8d7bd803394a1#npm:18.2.0"],\
+            ["react-icons", "virtual:157883dca3dc54146b7b52f62e6263c5cfd61b644fe169de364a875d75f0e0ab29e811befc40d15ded7a93435233d6b05a9256a7d5d1aff729d8d7bd803394a1#npm:4.11.0"],\
             ["react-router-dom", "virtual:157883dca3dc54146b7b52f62e6263c5cfd61b644fe169de364a875d75f0e0ab29e811befc40d15ded7a93435233d6b05a9256a7d5d1aff729d8d7bd803394a1#npm:6.14.2"],\
             ["styled-components", "virtual:157883dca3dc54146b7b52f62e6263c5cfd61b644fe169de364a875d75f0e0ab29e811befc40d15ded7a93435233d6b05a9256a7d5d1aff729d8d7bd803394a1#npm:6.0.8"],\
             ["swiper", "npm:10.3.1"],\
@@ -6221,6 +6223,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["loose-envify", "npm:1.4.0"],\
             ["react", "npm:18.2.0"],\
             ["scheduler", "npm:0.23.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["react-icons", [\
+        ["npm:4.11.0", {\
+          "packageLocation": "./.yarn/cache/react-icons-npm-4.11.0-08184d1639-7b8b80bbe2.zip/node_modules/react-icons/",\
+          "packageDependencies": [\
+            ["react-icons", "npm:4.11.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:157883dca3dc54146b7b52f62e6263c5cfd61b644fe169de364a875d75f0e0ab29e811befc40d15ded7a93435233d6b05a9256a7d5d1aff729d8d7bd803394a1#npm:4.11.0", {\
+          "packageLocation": "./.yarn/__virtual__/react-icons-virtual-d8ffa56b72/0/cache/react-icons-npm-4.11.0-08184d1639-7b8b80bbe2.zip/node_modules/react-icons/",\
+          "packageDependencies": [\
+            ["react-icons", "virtual:157883dca3dc54146b7b52f62e6263c5cfd61b644fe169de364a875d75f0e0ab29e811befc40d15ded7a93435233d6b05a9256a7d5d1aff729d8d7bd803394a1#npm:4.11.0"],\
+            ["@types/react", "npm:18.2.14"],\
+            ["react", "npm:18.2.0"]\
           ],\
           "packagePeers": [\
             "@types/react",\

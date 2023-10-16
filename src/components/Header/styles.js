@@ -41,7 +41,7 @@ export const Li = styled.li`
         bottom: -10px;
         left: 50%;
         transform: translateX(-50%);
-        transition: width 0.6s ease-in-out;
+        transition: width 0.3s ease-in-out;
     }
 
     &:hover::after{

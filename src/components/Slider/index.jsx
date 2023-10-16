@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import Card from '../Card';
 function Slider({info,title}){
-console.log(info)
+
     return (
         <Container>
             <h2 style={{color:'white'}}>{title}</h2>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Container,Background } from "./styles"
 import api from "../../services/api"
 import {SlClose} from 'react-icons/sl'
+import { getMovie } from "../../utils/getData"
 
 function Modal({movideId,setShowModal}){
  const [movie,setMovie] = useState()
@@ -10,8 +11,7 @@ function Modal({movideId,setShowModal}){
 
         async function getMovies(){
                
-            const {data:{results}} = await api.get(`/movie/${movideId}/videos`)
-            setMovie(results[0])
+            setMovie(await getMovie(movideId))
        }
        getMovies()
     },[])

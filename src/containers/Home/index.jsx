@@ -5,6 +5,8 @@ import { Background,Info,Poster,Container,ContainerButtons} from './styles'
 import { useState,useEffect } from 'react'
 import {getImages} from '../../utils/getImages'
 import Modal from '../../components/Modal'
+import {useNavigate} from 'react-router-dom'
+import { getMovies, getPopularSeries, getTopMovies, getTopPeople, getTopSeries } from '../../utils/getData'
 
 const Home = () =>{
      const [showModal,setShowModal] = useState(false)
@@ -13,47 +15,28 @@ const Home = () =>{
      const [topSeries,setTopSeries] = useState()
      const [popularSeries,setPopularSeries] = useState()
      const [TopPeople,setTopPeople] = useState()
-
+     const navigate = useNavigate()
      useEffect(()=>{
-          async function getMovies(){
-               
-               const {data:{results}} = await api.get('/movie/popular')
-              
-               setMovie(results[0])
-          }
-
-          async function getTopMovies(){
-               
-               const {data:{results}} = await api.get('/movie/top_rated')
-               setTopMovies(results)
-          }
-
-          async function getTopSeries(){
-               
-               const {data:{results}} = await api.get('/tv/top_rated')
-               setTopSeries(results)
-          }
-
-          async function getPopularSeries(){
-               
-               const {data:{results}} = await api.get('/tv/popular')
-               setPopularSeries(results)
-          }
-
-          async function getTopPeople(){
-               
-               const {data:{results}} = await api.get('/person/popular')
-               setTopPeople(results)
-          }
           
-           getMovies()
-           getTopMovies()
-           getTopSeries()
-           getPopularSeries()
-           getTopPeople()
-           console.log(TopPeople)
+          async function getAllData(){
+              
+               setMovie(await getMovies())
+               setTopMovies(await getTopMovies())
+               setTopSeries(await getTopSeries())
+               setPopularSeries(await getPopularSeries())
+               setTopPeople(await getTopPeople())
+          }
+
+          
+          getAllData()
+
      },[])
 
+     // const testeButtonText = event => {
+
+     //      console.log(event.target.innerText)
+
+     // }
 
     return (
      <>   
@@ -65,9 +48,8 @@ const Home = () =>{
                                         <h1>{movie.title}</h1>
                                         <p>{movie.overview}</p>
                                         <ContainerButtons>
-                                             <Button red={true}>Assista Agora</Button>
-                                             <Button onClick={()=> setShowModal(true)} red={false}>Assista o Trailer</Button>
-                                             
+                                             <Button onClick={() => navigate(`/detail/${movie.id}`)} red={true}>Assista Agora</Button>
+                                             <Button  onClick={()=> setShowModal(true)} red={false}>Assista o Trailer</Button>
                                         </ContainerButtons>
 
                                    </Info>

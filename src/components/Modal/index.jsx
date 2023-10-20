@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { Container,Background } from "./styles"
 import api from "../../services/api"
 import {SlClose} from 'react-icons/sl'
-import { getMovie } from "../../utils/getData"
+import { getMovieVideos } from "../../utils/getData"
 
 function Modal({movideId,setShowModal}){
  const [movie,setMovie] = useState()
@@ -11,7 +11,7 @@ function Modal({movideId,setShowModal}){
 
         async function getMovies(){
                
-            setMovie(await getMovie(movideId))
+            setMovie(await getMovieVideos(movideId))
        }
        getMovies()
     },[])

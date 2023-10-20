@@ -36,10 +36,34 @@ export async function getTopPeople(){
 }
 
 //Busca o filme pelo ID
-export async function getMovie(movideId){
+export async function getMovieVideos(movideId){
 
     const {data:{results}} = await api.get(`/movie/${movideId}/videos`)
 
-    return results[0]
+    return results
+
+}
+
+export async function getMovieCredits(movideId){
+
+    const {data} = await api.get(`/movie/${movideId}/credits`)
+
+    return data
+
+}
+
+export async function getMovieSimilar(movideId){
+
+    const {data:{results}} = await api.get(`/movie/${movideId}/similar`)
+
+    return results
+
+}
+
+export async function getMovieById(movideId){
+
+    const {data} = await api.get(`/movie/${movideId}`)
+
+    return data
 
 }

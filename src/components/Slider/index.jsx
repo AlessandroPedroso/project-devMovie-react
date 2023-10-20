@@ -8,7 +8,7 @@ function Slider({info,title}){
         <Container>
             <h2 style={{color:'white'}}>{title}</h2>
             
-            <Swiper grabCursor spaceBetween={10} slidesPerView={'auto'} className="swiper">
+            <Swiper grabCursor spaceBetween={12} slidesPerView={'auto'} className="swiper">
                 
                         {info.map((item,index)=>(
                               <SwiperSlide key={index}>

@@ -1,7 +1,8 @@
-import { getMovieById, getMovieCredits, getMovieSimilar, getMovieVideos } from "../../utils/getData"
-import { Container } from "./styles"
+import { getMovieById, getMovieCredits, getMovieSimilar, getMovieVideosDetail } from "../../utils/getData"
+import { Container,Backgorund,Cover,Info } from "./styles"
 import { useEffect, useState } from "react"
 import {useParams} from 'react-router-dom'
+import {getImages} from '../../utils/getImages'
 function Detail(){
     console.log(useParams())
     const [movie,setMovie] = useState()
@@ -17,7 +18,7 @@ function Detail(){
               //console.time('time')
              Promise.all([
                   getMovieById(id),
-                  getMovieVideos(id),
+                  getMovieVideosDetail(id),
                   getMovieCredits(id),
                   getMovieSimilar(id)
 
@@ -30,16 +31,36 @@ function Detail(){
              })
                .catch(error => console.log(error))
                //console.timeEnd('time')
+
+               
          }
 
          
          getAllData()
+         
 
    },[])
     return (
-         <Container>
-            <div>Detalhe</div>
-         </Container>
+     <>
+          {movie && (
+               <>
+                    <Backgorund image={getImages(movie.backdrop_path)}/>
+                         
+                    <Container>
+                         <Cover>
+                              <img src={getImages(movie.poster_path)}/>
+                         </Cover>
+                         <Info>
+                              <h2>{movie.title}</h2>
+                              <div>Generos</div>
+                              <p>{movie.overview}</p>
+                              <div>Créditos</div>
+                         </Info>
+
+                    </Container>
+               </>
+         )}
+     </>
 
     ) 
 }

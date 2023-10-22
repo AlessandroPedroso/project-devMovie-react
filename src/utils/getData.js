@@ -40,9 +40,18 @@ export async function getMovieVideos(movideId){
 
     const {data:{results}} = await api.get(`/movie/${movideId}/videos`)
 
+    return results[0]
+
+}
+
+export async function getMovieVideosDetail(movideId){
+
+    const {data:{results}} = await api.get(`/movie/${movideId}/videos`)
+
     return results
 
 }
+
 
 export async function getMovieCredits(movideId){
 

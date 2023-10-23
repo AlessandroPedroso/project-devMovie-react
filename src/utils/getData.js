@@ -55,9 +55,9 @@ export async function getMovieVideosDetail(movideId){
 
 export async function getMovieCredits(movideId){
 
-    const {data} = await api.get(`/movie/${movideId}/credits`)
+    const {data:{cast}} = await api.get(`/movie/${movideId}/credits`)
 
-    return data
+    return cast
 
 }
 

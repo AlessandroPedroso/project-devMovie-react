@@ -2,7 +2,7 @@ import { getImages } from "../../utils/getImages"
 import { Title, Container } from "./styles"
 //slice serve para cortar o array
 function Credits({credits}){
-console.log(credits)
+
     return (
         <>
             <Title>Créditos</Title>

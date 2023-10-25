@@ -22,7 +22,7 @@ function Modal({movideId,setShowModal}){
             {movie && (
                 <Container>
                     
-                    <iframe src={`https://www.youtube.com/embed/${movie.key}`} title="Youtube Video Player" height="500xp" width='100%'></iframe>
+                    <iframe src={`https://www.youtube.com/embed/${movie[0].key}`} title="Youtube Video Player" height="500xp" width='100%'></iframe>
                     <span><SlClose onClick={() => setShowModal(false)} size={30}/></span>
                 </Container>
             )}

@@ -1,4 +1,4 @@
-import { getMovieById, getMovieCredits, getMovieSimilar, getMovieVideosDetail } from "../../utils/getData"
+import { getMovieById, getMovieCredits, getMovieSimilar, getMovieVideos } from "../../utils/getData"
 import { Container,Backgorund,Cover,Info,ContainerMovies } from "./styles"
 import { useEffect, useState } from "react"
 import {useParams} from 'react-router-dom'
@@ -22,12 +22,12 @@ function Detail(){
               //console.time('time')
              Promise.all([
                   getMovieById(id),
-                  getMovieVideosDetail(id),
+                  getMovieVideos(id),
                   getMovieCredits(id),
                   getMovieSimilar(id)
 
              ]).then(([movie,videos,credits,similar]) => {
-                console.log({movie,videos,credits,similar})
+               
               setMovie(movie)
               setMovieVideos(videos)
               setMovieCredits(credits)

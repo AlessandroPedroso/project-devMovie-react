@@ -9,7 +9,7 @@ export const Container = styled.div `
         display: flex;
     }
 
-    h2{
+    h3{
         margin-bottom:20px;
         font-size: 24px;
         margin: 30px 20px

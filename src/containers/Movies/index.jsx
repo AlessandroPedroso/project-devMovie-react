@@ -1,11 +1,39 @@
+import { useEffect, useState } from "react"
+import { getAllMovies } from "../../utils/getData"
+import Grid from "../../components/Grid"
+
+
 
 const Movies = () =>{
+
+    const [movies,setMovies] = useState()
     
+    useEffect(()=>{
+
+        async function getAllData(){
+
+            Promise.all([
+
+                getAllMovies()
+
+            ]).then(([movies]) =>{
+
+                setMovies(movies)
+            })
+
+        }
+        getAllData()
+
+        
+
+    },[])
+
     return (
-        <div>  
-             <h1>Movies</h1>
-             <p>Bem vindo a pagina de Movies</p>
-        </div>
+
+        <>
+            {movies && <Grid info={movies}/>} 
+        </>
+
     )
 }
 

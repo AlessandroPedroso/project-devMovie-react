@@ -16,6 +16,7 @@ const Home = () =>{
      const [popularSeries,setPopularSeries] = useState()
      const [TopPeople,setTopPeople] = useState()
      const navigate = useNavigate()
+     
      useEffect(()=>{
           
           // async function getAllData(){

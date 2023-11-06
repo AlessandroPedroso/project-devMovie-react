@@ -99,6 +99,8 @@ export const ContainerMovies = styled.div `
     padding: 20px;
     width: 100%;
 
+    background: red;
+
 
     div{
         display: flex;

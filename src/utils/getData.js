@@ -68,3 +68,13 @@ export async function getMovieById(movideId){
     return data
 
 }
+
+export async function getAllMovies(){
+    const {data:{results}} = await api.get(`/movie/popular`)
+
+    return results
+}
+
+
+
+

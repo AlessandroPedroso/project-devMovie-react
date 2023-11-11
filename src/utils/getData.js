@@ -75,6 +75,16 @@ export async function getAllMovies(){
     return results
 }
 
+export async function getSeriesById (seriesId){
+    const {data} = await api.get(`/tv/${seriesId}`)
 
+    return data
+}
+
+export const getSeriesCredit = async(creditId)=>{
+    const {data:{cast}} = await api.get(`/tv/${creditId}/credits`)
+
+    return cast
+}
 
 

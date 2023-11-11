@@ -12,7 +12,9 @@ export const Body = styled.div`
     display: grid;
     grid-template-columns: repeat(4,1fr);
     padding: 50px;
-    justify-content: center;
+    width: 100%;
+    justify-items: center;
+    column-gap: 0px;
     
 
     div{
@@ -21,7 +23,7 @@ export const Body = styled.div`
         text-align: center;
         flex-direction: column;
         margin-bottom: 30px;
-        
+        cursor: pointer;
 
     }
 

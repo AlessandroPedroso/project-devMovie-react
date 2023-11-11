@@ -5,7 +5,7 @@ import {Link,useLocation} from 'react-router-dom'
 
 function Header(){
     const [changeBackground,setChangeBackground] = useState(false)
-    const [colorBlue, setColorBlue] = useState(false)
+    const [colorBlues, setColorBlues] = useState(false)
 
     const {pathname} = useLocation()
 
@@ -13,12 +13,12 @@ function Header(){
 
         if(!changeBackground && window.pageYOffset > 150){
             setChangeBackground(true)
-            setColorBlue(true)
+            setColorBlues(true)
         }
 
         if(changeBackground && window.pageYOffset <=150){
                 setChangeBackground(false)
-                setColorBlue(false)
+                setColorBlues(false)
         }
 
     }
@@ -27,13 +27,13 @@ function Header(){
         <Container changeBackground={changeBackground} >
             <img src={Logo} alt="imagem-do-logos" />
            <Menu>
-                <Li isActive={pathname === '/'} colorBlue={colorBlue}>
+                <Li isActive={pathname === '/'} color={colorBlues}>
                     <Link to="/">Home</Link>
                 </Li>
-                <Li isActive={pathname.includes('filmes')} colorBlue={colorBlue}>
+                <Li isActive={pathname.includes('filmes')} color={colorBlues}>
                     <Link to="/filmes">Filmes</Link>
                 </Li>
-                <Li isActive={pathname.includes('series')} colorBlue={colorBlue}>
+                <Li isActive={pathname.includes('series')} color={colorBlues}>
                     <Link to="/series">Séries</Link>
                 </Li>
            </Menu>

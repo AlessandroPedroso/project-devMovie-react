@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     min-height:100px;
-    z-index: 99;
+    z-index: 999;
     position:fixed;
     top:0;
     display: flex;
@@ -36,7 +36,7 @@ export const Li = styled.li`
         content: '';
         height: 3px;
         width: ${props=> props.isActive ? '100%' : 0};
-        background-color: ${props => props.colorBlue? 'blue' : '#189b20'} ;
+        background-color: ${props => props.color? 'blue' : '#189b20'} ;
         position: absolute;
         bottom: -10px;
         left: 50%;

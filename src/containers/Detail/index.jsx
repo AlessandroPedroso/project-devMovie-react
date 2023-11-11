@@ -13,7 +13,7 @@ function Detail(){
     const [movieVideos,setMovieVideos] = useState()
     const [movieCredits,setMovieCredits] = useState()
     const [movieSimilar,setMovieSimilar] = useState()
-
+    
     const {id} = useParams()
 
     useEffect(()=>{
@@ -44,6 +44,7 @@ function Detail(){
          
 
    },[])
+   console.log(movie)
     return (
      <>
           {movie && (

@@ -7,6 +7,7 @@ import Grid from "../../components/Grid"
 const Movies = () =>{
 
     const [movies,setMovies] = useState()
+  
     
     useEffect(()=>{
 
@@ -31,7 +32,7 @@ const Movies = () =>{
     return (
 
         <>
-            {movies && <Grid info={movies}/>} 
+            {movies && <Grid infoSeries={false} info={movies}/>} 
         </>
 
     )

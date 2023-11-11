@@ -58,6 +58,7 @@ export const Cover = styled.div`
     align-items: flex-start;
     height: 100%;
     z-index: 99;
+    
     img{
         width: 450px;
         border-radius: 30px;
@@ -98,9 +99,6 @@ export const ContainerMovies = styled.div `
     justify-content:center;
     padding: 20px;
     width: 100%;
-
-    background: red;
-
 
     div{
         display: flex;

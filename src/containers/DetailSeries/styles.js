@@ -94,3 +94,34 @@ export const Info = styled.div`
   }
 
 `
+
+export const ContainerSeriesVideos = styled.div`
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    
+
+    div{
+        display: flex;
+        flex-direction: column;
+        max-width: 1000px;
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    h4{
+        color: #fff;
+        font-size:20px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    iframe{
+        border: none;
+    }
+
+
+`

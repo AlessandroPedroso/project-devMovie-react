@@ -87,4 +87,16 @@ export const getSeriesCredit = async(creditId)=>{
     return cast
 }
 
+export const getSeriesVideos = async(videosId)=>{
+    const {data:{results}} = await api.get(`/tv/${videosId}/videos`)
+
+    return results
+}
+
+export const getSeriesSimilar = async(similarId) =>{
+    const {data:{results}} = await api.get(`/tv/${similarId}/similar`)
+
+    return results
+}
+
 

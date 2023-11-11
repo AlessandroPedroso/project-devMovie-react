@@ -1,34 +1,45 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getSeriesById, getSeriesCredit } from "../../utils/getData";
-import { Backgorund, Container, CoverImage,Info } from "./styles";
+import { getSeriesById, getSeriesCredit,getSeriesVideos,getSeriesSimilar } from "../../utils/getData";
+import { Backgorund, Container, CoverImage,Info,ContainerSeriesVideos } from "./styles";
 import { getImages } from "../../utils/getImages";
 import SpanGenres from "../../components/SpanGenres";
 import Credits from "../../components/Credits";
+import Slider from "../../components/Slider";
 
 const DetailSeries = () => {
   const { idSeries } = useParams();
   const [series, setSeries] = useState();
   const [seriesCredit, setSeriesCredit] = useState()
+  const [seriesVideos, setSeriesVideos] = useState()
+  const [seriesSimilar, setSerieSimilar] = useState()
+
 
   useEffect(() => {
     async function getAllData() {
       Promise.all([
         getSeriesById(idSeries),
-        getSeriesCredit(idSeries)
+        getSeriesCredit(idSeries),
+        getSeriesVideos(idSeries),
+        getSeriesSimilar(idSeries)
+
     ])
-        .then(([serie,credit]) => {
+        .then(([serie,credit,videos,similar]) => {
           setSeries(serie)
           setSeriesCredit(credit)
+          setSeriesVideos(videos)
+          setSerieSimilar(similar)
           
         })
         .catch((error) => console.log(error));
     }
 
-    getAllData();
-  }, []);
+    
 
-  console.log(series);
+    getAllData();
+
+
+  }, [idSeries]);
 
   return (
     <>
@@ -53,6 +64,21 @@ const DetailSeries = () => {
 
             </Info>
           </Container>
+        
+            <ContainerSeriesVideos>
+                {seriesVideos && seriesVideos.map(video=>(
+                    <div key={video.id}>
+                        <h4>{video.name}</h4>
+                        <iframe src={`https://www.youtube.com/embed/${video.key}`} title="Youtube Video Player" height="500px"  width="100%"  />
+                    </div>
+                ))}
+                
+            </ContainerSeriesVideos>
+            
+            {series && <Slider idSerie={idSeries} serie={true} info={series.seasons} title={'Temporadas'} /> }
+
+            {seriesSimilar && <Slider idSerie={idSeries} serie={true} info={seriesSimilar} title={'Series Similares'} /> }
+            
 
 
         </>

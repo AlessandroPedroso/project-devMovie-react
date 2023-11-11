@@ -43,8 +43,8 @@ function Detail(){
          getAllData()
          
 
-   },[])
-   console.log(movie)
+   },[id])
+
     return (
      <>
           {movie && (
@@ -72,7 +72,7 @@ function Detail(){
                                <div key={video.id}>
 
                                    <h4>{video.name}</h4>
-                                   <iframe src={`https://www.youtube.com/embed/${video.key}`} title="Youtube Video Player" height="500xp" width='100%'></iframe>
+                                   <iframe src={`https://www.youtube.com/embed/${video.key}`} title="Youtube Video Player" height="500px" width='100%'></iframe>
 
 
                                </div>

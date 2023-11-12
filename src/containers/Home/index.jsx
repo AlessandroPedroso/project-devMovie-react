@@ -90,9 +90,9 @@ const Home = () =>{
            }
 
          {topMovies && <Slider info={topMovies} title={'Top Filmes'} /> }
-         {topSeries && <Slider info={topSeries} title={'Top Séries'} /> }
-         {popularSeries && <Slider info={popularSeries} title={'Séries Populares'} /> }
-         {TopPeople && <Slider info={TopPeople} title={'Top Artistas'} /> }
+         {topSeries && <Slider serie={true} info={topSeries} title={'Top Séries'} /> }
+         {popularSeries && <Slider serie={true} info={popularSeries} title={'Séries Populares'} /> }
+         {TopPeople && <Slider people={true} info={TopPeople} title={'Top Artistas'} /> }
        
 
      </>

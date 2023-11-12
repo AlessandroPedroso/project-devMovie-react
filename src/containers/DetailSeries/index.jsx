@@ -75,9 +75,9 @@ const DetailSeries = () => {
                 
             </ContainerSeriesVideos>
             
-            {series && <Slider idSerie={idSeries} serie={true} info={series.seasons} title={'Temporadas'} /> }
+            {series && <Slider season={true} idSerie={idSeries} serie={true} info={series.seasons} title={'Temporadas'} /> }
 
-            {seriesSimilar && <Slider idSerie={idSeries} serie={true} info={seriesSimilar} title={'Series Similares'} /> }
+            {seriesSimilar && <Slider serie={true} info={seriesSimilar} title={'Series Similares'} /> }
             
 
 

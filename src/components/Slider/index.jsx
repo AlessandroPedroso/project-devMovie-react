@@ -4,13 +4,14 @@ import {useNavigate}  from 'react-router-dom'
 
 import Card from '../Card';
 
-function Slider({info,title,serie}){
+function Slider({info,title,serie,people,season,idSerie}){
 
   const navigate = useNavigate()
  
   const someFunction = (id) => {
     serie ? navigate(`/detailSeries/${id}`) : navigate(`/detail/${id}`)
-    
+    people? navigate(`/`):""
+    season? navigate(`/detailSeries/${idSerie}`):""
     navigate(0)
 
 

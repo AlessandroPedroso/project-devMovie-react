@@ -15,7 +15,28 @@ export const Body = styled.div`
     width: 100%;
     justify-items: center;
     row-gap: 50px;
-    
+
+
+    @media (max-width: 1114px) {
+        gap: 10px;
+  }
+
+    @media (max-width: 1068px) {
+        grid-template-columns: repeat(3,1fr);
+  }
+
+
+
+  @media (max-width: 838px) {
+        grid-template-columns: repeat(2,1fr);
+  }
+
+  @media (max-width: 578px) {
+        grid-template-columns: repeat(1,1fr);
+        align-items: center;
+        justify-content: center;
+  }
+
 
     div{
         

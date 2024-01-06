@@ -21,4 +21,13 @@ export const Container = styled.div `
 
     }
 
+    @media (max-width: 391px) {
+    
+        span{
+            text-align: center;
+
+        }
+
+    }
+
 `

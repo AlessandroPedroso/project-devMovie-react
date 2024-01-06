@@ -78,8 +78,6 @@ const DetailSeries = () => {
             {series && <Slider season={true} idSerie={idSeries} serie={true} info={series.seasons} title={'Temporadas'} /> }
 
             {seriesSimilar && <Slider serie={true} info={seriesSimilar} title={'Series Similares'} /> }
-            
-
 
         </>
       )}

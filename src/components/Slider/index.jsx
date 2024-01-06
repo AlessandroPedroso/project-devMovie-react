@@ -13,8 +13,6 @@ function Slider({info,title,serie,people,season,idSerie}){
     people? navigate(`/`):""
     season? navigate(`/detailSeries/${idSerie}`):""
     navigate(0)
-
-
 }
 
     return (
@@ -26,7 +24,7 @@ function Slider({info,title,serie,people,season,idSerie}){
                                 {info.filter(similar=> similar.backdrop_path !==null && similar.poster_path !==null).map((item,index)=>(
                                   
                                       <SwiperSlide key={index}>
-                                        <Card item={item} onClick={() => someFunction(item.id)}></Card>
+                                        <Card item={item} onClick={()=>someFunction(item.id)}></Card>
                                       </SwiperSlide>
                                     ))}
                         </Swiper>

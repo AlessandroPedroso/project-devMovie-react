@@ -1,44 +1,58 @@
-import { useState } from 'react'
-import Logo from '../../assets/logo.png'
-import { Container,Menu,Li } from './styles'
-import {Link,useLocation} from 'react-router-dom'
+import { useState } from "react";
+import Logo from "../../assets/logo.png";
+import { Container, Menu, Li, MenuDefault,DivShowMenu } from "./styles";
+import { Link, useLocation } from "react-router-dom";
+import { FiAlignJustify } from "react-icons/fi";
 
-function Header(){
-    const [changeBackground,setChangeBackground] = useState(false)
-    const [colorBlues, setColorBlues] = useState(false)
+function Header() {
+  const [changeBackground, setChangeBackground] = useState(false);
+  const [colorBlues, setColorBlues] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
-    const {pathname} = useLocation()
+  const toggleMenu = () =>{
+    setShowMenu(!showMenu)
+  }
 
-    window.onscroll = () => {
+  const { pathname } = useLocation();
 
-        if(!changeBackground && window.pageYOffset > 150){
-            setChangeBackground(true)
-            setColorBlues(true)
-        }
-
-        if(changeBackground && window.pageYOffset <=150){
-                setChangeBackground(false)
-                setColorBlues(false)
-        }
-
+  window.onscroll = () => {
+    if (!changeBackground && window.pageYOffset > 150) {
+      setChangeBackground(true);
+      setColorBlues(true);
     }
 
-    return (
-        <Container changeBackground={changeBackground} >
-            <img src={Logo} alt="imagem-do-logos" />
-           <Menu>
-                <Li isActive={pathname === '/'} color={colorBlues}>
+    if (changeBackground && window.pageYOffset <= 150) {
+      setChangeBackground(false);
+      setColorBlues(false);
+    }
+  };
+
+  return (
+    <Container changeBackground={changeBackground}>
+      <img src={Logo} alt="imagem-do-logos" />
+      
+      <DivShowMenu>
+        <MenuDefault >
+            <FiAlignJustify onClick={toggleMenu} size={50} />
+        </MenuDefault>
+
+    
+                <Menu showMenu={showMenu}>
+                <Li isActive={pathname === "/"} color={colorBlues}>
                     <Link to="/">Home</Link>
                 </Li>
-                <Li isActive={pathname.includes('filmes')} color={colorBlues}>
+                <Li isActive={pathname.includes("filmes")} color={colorBlues}>
                     <Link to="/filmes">Filmes</Link>
                 </Li>
-                <Li isActive={pathname.includes('series')} color={colorBlues}>
+                <Li isActive={pathname.includes("series")} color={colorBlues}>
                     <Link to="/series">Séries</Link>
                 </Li>
-           </Menu>
-        </Container>
-    )
+            </Menu>
+        </DivShowMenu>
+     
+    </Container>
+    
+  );
 }
 
-export default Header
+export default Header;

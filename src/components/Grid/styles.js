@@ -16,6 +16,9 @@ export const Body = styled.div`
     justify-items: center;
     row-gap: 50px;
 
+    @media (max-width: 1024px) {
+        margin-top: 200px;
+  }
 
     @media (max-width: 1114px) {
         gap: 10px;

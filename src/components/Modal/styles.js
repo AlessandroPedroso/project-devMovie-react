@@ -19,13 +19,14 @@ export const Container = styled.div`
     width: 70%;
     display:flex;
     justify-content: center;
-    gap: 15px;
+    
     align-items: center;
     position:fixed;
     padding: 15px;
     max-width:1200px;
 
     iframe{
+        
         border: none;
     }
 
@@ -34,6 +35,17 @@ export const Container = styled.div`
         position: relative;
         top: -230px;
 
+    }
+
+    @media (max-width: 500px) {
+        padding: 0px;
+     
+        iframe{
+
+            padding-left: 25px;
+        }
+        
+        
     }
     
 `

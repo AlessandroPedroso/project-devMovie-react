@@ -52,10 +52,11 @@ export const Container = styled.div`
   max-width: 1500px;
   margin-top: 80px;
 
-  /* @media (max-width: 778px) {
-    flex-direction: column-reverse;
-    margin-top: 750px;
-  } */
+  @media (max-width: 350px) {
+   
+    margin-top: 350px;
+    margin-bottom: 150px;
+  }
 `;
 
 export const Info = styled.div`
@@ -134,7 +135,7 @@ export const Poster = styled.div`
         }
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 650px) {
             img {
             width:260px;
         }
